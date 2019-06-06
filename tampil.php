@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("/config/config.php");
 $sql = mysqli_query($connect,"SELECT koor_x, koor_y, koor_z, koor_r FROM koordinat");
 $result = array();
  

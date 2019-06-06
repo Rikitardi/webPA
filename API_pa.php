@@ -1,5 +1,5 @@
 <?php 
-	include_once("config.php");
+	include_once("/config/config.php");
 	
 	$koorx = isset($_GET['x']) ? true:false;
 	$koory = isset($_GET['y']) ? true:false;
