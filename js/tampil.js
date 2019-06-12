@@ -14,7 +14,7 @@ function selesai() {
 	setTimeout(function() {
 		update();
 		selesai();
-	}, 200);
+	}, 1);
 }
  
 function update() {
@@ -42,20 +42,20 @@ function workspace(){
 	ctx.clearRect(0,0, canvas.width, canvas.height);
 
 	ctx.beginPath();
-	ctx.arc(300, 200, 150, Math.PI, 2*Math.PI);
+	ctx.arc(300, 400, 150, Math.PI, 2*Math.PI);
 	ctx.stroke();
 
 	ctx.beginPath();
-	ctx.arc(300, 200, 100, Math.PI, 2*Math.PI);
+	ctx.arc(300, 400, 100, Math.PI, 2*Math.PI);
 	ctx.stroke();
 
 	ctx.beginPath(); // mulai menggmabar
-	ctx.moveTo(100,200);
-	ctx.lineTo(500,200);
+	ctx.moveTo(100,400);
+	ctx.lineTo(500,400);
 	ctx.stroke();
 
 	ctx.beginPath(); // mulai menggmabar
-	ctx.moveTo(300,200);
+	ctx.moveTo(300,400);
 	ctx.lineTo(300,20);
 	ctx.stroke();
 }
@@ -74,21 +74,21 @@ function titikbulat(tempx,tempy){
 	ctx.clearRect(tempx+2,tempy-4,1,1);
 	ctx.clearRect(tempx-3,tempy+3,1,1);
 	ctx.clearRect(tempx+2,tempy+3,1,1);
-	ctx.moveTo(300,200);
+	ctx.moveTo(300,400);
 	ctx.lineTo(tempx,tempy);
 	ctx.stroke();
 }
 
 function nilai(inputx, inputy){
 	tempx = 300 + parseFloat(inputx);
-	tempy = 200 - parseFloat(inputy);
+	tempy = 410 - parseFloat(inputy);
 	//console.log(tempx);
 	//console.log(tempy);
 	
 	workspace();
 	
 	ctx.beginPath(); // mulai menggmabar
-	ctx.moveTo(300,200);
+	ctx.moveTo(300,400);
 	titikbulat(tempx,tempy);
 	ctx.lineTo(tempx,tempy);
 	ctx.stroke();
