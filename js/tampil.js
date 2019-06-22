@@ -4,60 +4,73 @@ var x = 0;
 var y = 0;
 var tempx = 0;
 var tempy = 0;
+var weblink = 'http://127.0.0.1/webPA/tampil.php';
+var acuanX= 200;
+var acuanY= 400;
 
-$(document).ready(function() {
-    selesai();
-	
-});
+$(document).ready(
+	function() {
+    	selesai();
+	}
+);
  
 function selesai() {
 	setTimeout(function() {
 		update();
 		selesai();
-	}, 1);
+	}, 200);
 }
  
 function update() {
-	$.getJSON("tampil.php", function(data) {
-//		$("input").empty();
+	$.getJSON(weblink, function(data) {
 		var arraydatax = data.result[0];
 		var arraydatay = data.result[1];
-		var datax = arraydatax.x
-		var datay = arraydatay.y
+        var arraydataz = data.result[2]
+		var datax = arraydatax.x;
+		var datay = arraydatay.y;
+        var dataz = arraydataz.z;
+        document.getElementById("x").innerHTML = datax;
+        document.getElementById("y").innerHTML = datay;
+        document.getElementById("z").innerHTML = dataz;
 		nilai(datax,datay);
-//		$.each(data.result, function(index, value) {
-//			if(index = 10){			
-//			var datax = this['x'];
-//			var datay = this['y']; 
-//			console.log(datax);
-//			console.log(datay);
-//			nilai(datax,datay);
-//			$("input").attr("value", datax);
-//		});
-	});
+        
+	})
 	
 }
 
 function workspace(){
+//------------------------------koordinat x dan y-------------------//
 	ctx.clearRect(0,0, canvas.width, canvas.height);
 
-	ctx.beginPath();
-	ctx.arc(300, 400, 150, Math.PI, 2*Math.PI);
+	ctx.font = "12px arial";
+	ctx.fillText("250",acuanX + 5,165);
+
+	ctx.fillRect(acuanX - 6,acuanY - 240,12,2);	
+	ctx.clearRect(tempx + 2,tempy + 3,1,1);
+	ctx.moveTo(acuanX,acuanY);
+	ctx.lineTo(tempx,tempy);
 	ctx.stroke();
 
 	ctx.beginPath();
-	ctx.arc(300, 400, 100, Math.PI, 2*Math.PI);
+	ctx.arc(acuanX, acuanY, 150, Math.PI, 2 * Math.PI);
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(acuanX, acuanY, 100, Math.PI, 2 * Math.PI);
 	ctx.stroke();
 
 	ctx.beginPath(); // mulai menggmabar
-	ctx.moveTo(100,400);
-	ctx.lineTo(500,400);
+	ctx.moveTo(acuanX - 200,acuanY);
+	ctx.lineTo(acuanX + 200,acuanY);
 	ctx.stroke();
 
 	ctx.beginPath(); // mulai menggmabar
-	ctx.moveTo(300,400);
-	ctx.lineTo(300,20);
+	ctx.moveTo(acuanX,acuanY);
+	ctx.lineTo(acuanX,20);
 	ctx.stroke();
+
+//------------------------------koordinat z-------------------//
+
 }
 
 function titikbulat(tempx,tempy){
@@ -74,21 +87,19 @@ function titikbulat(tempx,tempy){
 	ctx.clearRect(tempx+2,tempy-4,1,1);
 	ctx.clearRect(tempx-3,tempy+3,1,1);
 	ctx.clearRect(tempx+2,tempy+3,1,1);
-	ctx.moveTo(300,400);
+	ctx.moveTo(acuanX,acuanY);
 	ctx.lineTo(tempx,tempy);
 	ctx.stroke();
 }
 
 function nilai(inputx, inputy){
-	tempx = 300 + parseFloat(inputx);
-	tempy = 410 - parseFloat(inputy);
-	//console.log(tempx);
-	//console.log(tempy);
+	tempx = acuanX + parseFloat(inputx);
+	tempy = acuanY + 10 - parseFloat(inputy);
 	
 	workspace();
 	
 	ctx.beginPath(); // mulai menggmabar
-	ctx.moveTo(300,400);
+	ctx.moveTo(acuanX,acuanY);
 	titikbulat(tempx,tempy);
 	ctx.lineTo(tempx,tempy);
 	ctx.stroke();

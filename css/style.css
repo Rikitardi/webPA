@@ -1,3 +1,52 @@
-#myCanvas {
-    border: 1px solid #000000;
+
+.container{
+    margin-top: 20px;
+
+}
+
+.container #menu{
+    background:#2f4f4f;
+    margin-top: 10px;
+}
+
+.container #menu p{
+    color : #ffffff;
+}
+
+.container #header{
+    background:#ffffff;
+}
+
+.container #header h1{
+    color: #2f4f4f;
+}
+.container #konten #koordinat{
+    margin-top: 4px;
+    border: 2px solid #2f4f4f;
+    margin-bottom: 4px;
+}
+
+.container #konten #koordinat #table{
+    margin-top: 4px;
+    width: 60%;
+    margin-right: 10%;
+    margin-right: 20px;
+}
+
+.container #konten #workspace{
+    margin-top: 4px;
+    border: 2px solid #2f4f4f;
+    margin-bottom: 4px;
+}
+.container #konten #workspace #myCanvas {
+}
+
+
+.container #footer{
+    background: #2f4f4f;
+    padding-box: 10px;
+}
+
+.container #footer p{
+    color: #ffffff;
 }
