@@ -38,7 +38,11 @@
     border: 2px solid #2f4f4f;
     margin-bottom: 4px;
 }
+
 .container #konten #workspace #myCanvas {
+    border: 1px solid;
+    width: 100%;
+    height: auto;
 }
 
 

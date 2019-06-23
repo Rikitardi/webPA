@@ -1,4 +1,9 @@
 	<!DOCTYPE html>
+<?php
+header( "Access-Control-Allow-Origin: *" );
+header( "Access-Control-Allow-Credentials: true" );
+header( "Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS" );
+?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -48,7 +53,7 @@
                 </table>
             </div>
             <div id ="workspace" class="col-md-9 text-center">
-                <canvas id="myCanvas" width="700" height="500"></canvas>
+                <canvas id="myCanvas" width="700" height="500" ></canvas>
                 <script type="text/javascript" src="js/jquery.js"></script>
                 <script type="text/javascript" src="js/tampil.js"></script>
         </div>

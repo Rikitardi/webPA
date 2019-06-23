@@ -1,5 +1,8 @@
 <?php 
-	include_once("config/config.php");
+header( "Access-Control-Allow-Origin: *" );
+header( "Access-Control-Allow-Credentials: true" );
+header( "Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS" );
+include_once("config/config.php");
 	
 	$koorx = isset($_GET['x']) ? true:false;
 	$koory = isset($_GET['y']) ? true:false;
