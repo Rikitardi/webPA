@@ -47,7 +47,7 @@ header( "Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS" );
                         </tr>
                         <tr>
                             <td>Vaccum</td>
-                            <td id = "z"></td>
+                            <td id = "v"></td>
                         </tr>
                     </tbody>
                 </table>

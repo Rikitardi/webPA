@@ -91,16 +91,22 @@ function update() {
 		var arraydatax = data.result[0];
 		var arraydatay = data.result[1];
         var arraydataz = data.result[2]
-		var datax = arraydatax.x;
+        var arraydatav = data.result[3]
+        
+        var datax = arraydatax.x;
 		var datay = arraydatay.y;
         var dataz = arraydataz.z;        
-        
+        var datav = arraydatav.v;     
         
         sort(datax, datay, datax);
         
         document.getElementById("x").innerHTML = datax;
         document.getElementById("y").innerHTML = datay;
         document.getElementById("z").innerHTML = dataz;
+        if(datav == 1){
+            document.getElementById("v").innerHTML = 'ON';}
+        else if(datav == 0){
+            document.getElementById("v").innerHTML = 'OFF';}
 //		nilai(datax,datay);
         
 	})
